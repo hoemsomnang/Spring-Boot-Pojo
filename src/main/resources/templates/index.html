@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<table>
+<tr>
+<th>ID</th>
+<th>Name</th>
+<th>Gender</th>
+<th>Action</th>
+</tr>
+<tr th:each="users:${users}">
+<td th:text="${users.getId()}"></td>
+<td th:text="${users.getName()}"></td>
+<td th:text="${users.getGender()}"></td>
+<td><a th:href="@{/users/one/(userId=${users.getId()})}">View</a></td>
+</tr>
+</table>
+</body>
+</html>
